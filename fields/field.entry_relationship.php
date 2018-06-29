@@ -1067,8 +1067,8 @@
 
 			if (in_array('*', $exElements)) {
 				$sections = $field->getArray('sections');
-				// $sections = SectionManager::fetch($sections);
-				$sections = $this->sectionManager
+				$sm = new SectionManager;
+				$sections = $sm
 					->select()
 					->sections($sections)
 					->execute()
